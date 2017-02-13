@@ -1,0 +1,8 @@
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\bin\Debug\ConsoleHost.exe.config
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\bin\Debug\ConsoleHost.exe
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\bin\Debug\ConsoleHost.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\bin\Debug\EvalServiceLibrary.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\bin\Debug\EvalServiceLibrary.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\obj\Debug\ConsoleHost.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\obj\Debug\ConsoleHost.exe
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\ConsoleHost\obj\Debug\ConsoleHost.pdb

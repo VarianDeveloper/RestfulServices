@@ -1,0 +1,29 @@
+Type.registerNamespace('tempuri.org');
+tempuri.org.ICourseService=function() {
+tempuri.org.ICourseService.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+tempuri.org.ICourseService.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return tempuri.org.ICourseService._staticInstance.get_path();},
+GetCourseList:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetCourseList',false,{},succeededCallback,failedCallback,userContext); }}
+tempuri.org.ICourseService.registerClass('tempuri.org.ICourseService',Sys.Net.WebServiceProxy);
+tempuri.org.ICourseService._staticInstance = new tempuri.org.ICourseService();
+tempuri.org.ICourseService.set_path = function(value) { tempuri.org.ICourseService._staticInstance.set_path(value); }
+tempuri.org.ICourseService.get_path = function() { return tempuri.org.ICourseService._staticInstance.get_path(); }
+tempuri.org.ICourseService.set_timeout = function(value) { tempuri.org.ICourseService._staticInstance.set_timeout(value); }
+tempuri.org.ICourseService.get_timeout = function() { return tempuri.org.ICourseService._staticInstance.get_timeout(); }
+tempuri.org.ICourseService.set_defaultUserContext = function(value) { tempuri.org.ICourseService._staticInstance.set_defaultUserContext(value); }
+tempuri.org.ICourseService.get_defaultUserContext = function() { return tempuri.org.ICourseService._staticInstance.get_defaultUserContext(); }
+tempuri.org.ICourseService.set_defaultSucceededCallback = function(value) { tempuri.org.ICourseService._staticInstance.set_defaultSucceededCallback(value); }
+tempuri.org.ICourseService.get_defaultSucceededCallback = function() { return tempuri.org.ICourseService._staticInstance.get_defaultSucceededCallback(); }
+tempuri.org.ICourseService.set_defaultFailedCallback = function(value) { tempuri.org.ICourseService._staticInstance.set_defaultFailedCallback(value); }
+tempuri.org.ICourseService.get_defaultFailedCallback = function() { return tempuri.org.ICourseService._staticInstance.get_defaultFailedCallback(); }
+tempuri.org.ICourseService.set_path("/EvalSite/courses.svc");
+tempuri.org.ICourseService.GetCourseList= function(onSuccess,onFailed,userContext) {tempuri.org.ICourseService._staticInstance.GetCourseList(onSuccess,onFailed,userContext); }

@@ -1,0 +1,8 @@
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\bin\Debug\Client.exe.config
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\bin\Debug\Client.exe
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\bin\Debug\Client.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\bin\Debug\EvalServiceLibrary.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\bin\Debug\EvalServiceLibrary.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\obj\Debug\Client.exe
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\RestfulServices\WCF\Backup\Client\obj\Debug\Client.pdb

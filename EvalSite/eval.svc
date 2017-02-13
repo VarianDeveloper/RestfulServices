@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Service="EvalServiceLibrary.EvalService" 
+    Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>
