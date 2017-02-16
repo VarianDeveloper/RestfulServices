@@ -6,10 +6,11 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.ServiceModel.Syndication;
+using System.ServiceModel.Channels;
 
 namespace EvalServiceLibrary
 {
-    [DataContract(Namespace="http://pluralsight.com/evals")]
+    [DataContract(Namespace = "http://pluralsight.com/evals")]
     public class Eval
     {
         [DataMember]
@@ -25,12 +26,12 @@ namespace EvalServiceLibrary
     [ServiceContract]
     public interface IEvalService
     {
-        
-        [WebInvoke(Method="POST", UriTemplate="evals")]
-        [OperationContract]
-        void SubmitEval(Eval eval);
 
-        [WebGet(UriTemplate="eval/{id}")]
+        [WebInvoke(Method = "POST", UriTemplate = "evals")]
+        [OperationContract]
+        string SubmitEval(Eval eval);
+
+        [WebGet(UriTemplate = "eval/{id}")]
         [OperationContract]
         Eval GetEval(string id);
 
@@ -48,12 +49,24 @@ namespace EvalServiceLibrary
 
         [ServiceKnownType(typeof(Atom10FeedFormatter))]
         [ServiceKnownType(typeof(Rss20FeedFormatter))]
-        [WebGet(UriTemplate="evals/feed/{format}")]
+        [WebGet(UriTemplate = "evals/feed/{format}")]
         [OperationContract]
         SyndicationFeedFormatter GetFeed(string format);
     }
 
-    [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single)]
+    [AttributeUsage(AttributeTargets.Class)]
+    public class PrintRequestResponseAttribute : Attribute
+    {
+        public string test;
+
+        public PrintRequestResponseAttribute()
+        {
+            test = "Alex";
+        }
+    }
+
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    [PrintRequestResponse()]
     public class EvalService : IEvalService
     {
         List<Eval> evals = new List<Eval>();
@@ -61,10 +74,25 @@ namespace EvalServiceLibrary
 
         #region IEvalService Members
 
-        public void SubmitEval(Eval eval)
+        
+        public string SubmitEval(Eval eval)
         {
             eval.Id = (++evalCount).ToString();
             evals.Add(eval);
+
+            var cctx = WebOperationContext.Current;
+
+            //return "Service : \n" +
+            //    "Incoming request verb is " + WebOperationContext.Current.IncomingRequest.Method +
+            //    " , Outgoing responce status is " + cctx.OutgoingResponse.StatusCode.ToString();
+
+            System.Reflection.MemberInfo info = typeof(EvalService);
+            foreach (PrintRequestResponseAttribute attrib in info.GetCustomAttributes(true))
+            {
+               return attrib.test;
+            }
+
+            return "";
         }
 
         public Eval GetEval(string id)

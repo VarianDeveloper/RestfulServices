@@ -29,7 +29,7 @@ namespace Client
                 switch (command)
                 {
                     case "submit":
-                        
+
                         Console.WriteLine("Please enter your name:");
                         string name = Console.ReadLine();
                         Console.WriteLine("Please enter your comments:");
@@ -40,9 +40,9 @@ namespace Client
                         eval.Submitter = name;
                         eval.Comments = comments;
 
-                        client.SubmitEval(eval);
+                        var resp = client.SubmitEval(eval);
 
-                        Console.WriteLine("Evaluation submitted!\n");
+                        Console.WriteLine("Evaluation submitted! Response is: " + resp + "\n");
                         break;
 
                     case "get":
@@ -54,12 +54,12 @@ namespace Client
                         break;
 
                     case "list":
-                        
+
                         Console.WriteLine("Please enter the submitter name:");
                         name = Console.ReadLine();
 
                         List<Eval> evals = client.GetEvalsBySubmitter(name);
-                        
+
                         evals.ForEach(e => Console.WriteLine("{0} -- {1} said: {2} (id {3})", e.Timesent, e.Submitter, e.Comments, e.Id));
                         Console.WriteLine();
                         break;
